@@ -1,0 +1,155 @@
+aid: heygen
+name: HeyGen
+description: >-
+  HeyGen is an AI video generation platform that creates studio-quality
+  avatar videos, voice clones, and translated video content from simple
+  text prompts. The product line includes Avatar V (digital twins), Photo
+  Avatar, Avatar IV, the Starfish text-to-speech engine, the Video Agent
+  API, Video Translation, and Lipsync. HeyGen serves sales, marketing,
+  e-learning, and localization teams with both self-serve pay-as-you-go
+  API access (starting at a $5 minimum) and enterprise contracts. The
+  company is SOC 2 Type II and GDPR compliant and has powered 50M+
+  generated videos.
+type: Index
+position: Provider
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Artificial Intelligence
+  - Generative AI
+  - Video
+  - Avatars
+  - Voice Cloning
+  - Text To Speech
+  - Lipsync
+  - Translation
+  - Streaming
+  - MCP
+url: https://raw.githubusercontent.com/api-evangelist/heygen/refs/heads/main/apis.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.20'
+apis:
+  - aid: heygen:heygen-api
+    name: HeyGen API
+    description: >-
+      The HeyGen REST API exposes video generation, avatar management,
+      text-to-speech (Starfish), video translation, and lipsync capabilities.
+      It supports avatar videos generated from a single text prompt via the
+      Video Agent API, as well as fine-grained programmatic control over
+      avatars, voices, backgrounds, and layouts.
+    humanURL: https://developers.heygen.com/
+    baseURL: https://api.heygen.com/v3
+    tags:
+      - Video
+      - Avatars
+      - Voices
+      - Lipsync
+      - Translation
+      - Text To Speech
+    properties:
+      - type: Documentation
+        url: https://developers.heygen.com/
+      - type: GettingStarted
+        url: https://developers.heygen.com/docs/quick-start
+      - type: SignUp
+        url: https://app.heygen.com/signup
+      - type: API
+        url: https://developers.heygen.com/reference
+      - type: Pricing
+        url: https://www.heygen.com/pricing
+      - type: Authentication
+        url: https://developers.heygen.com/docs/authentication
+    features:
+      - name: Video Agent API
+        description: >-
+          Generate complete avatar videos from a single text prompt with no
+          manual setup.
+      - name: Video Generation API
+        description: >-
+          Programmatically control avatars, voices, backgrounds, and layouts
+          to compose videos.
+      - name: Digital Twin Avatars (Avatar V)
+        description: >-
+          Create photorealistic digital twins of real people for enterprise
+          and creator use.
+      - name: Photo Avatar and Avatar IV
+        description: >-
+          Generate talking avatars from a single photo with multiple model
+          tiers.
+      - name: Starfish Text-to-Speech
+        description: >-
+          Natural voice synthesis used for narration across video and audio
+          workflows.
+      - name: Video Translation
+        description: >-
+          Translate and dub videos into 175+ languages with preserved
+          lip-sync.
+      - name: Lipsync
+        description: >-
+          Swap audio in existing videos with automatic lip synchronization
+          (Precision and Speed models).
+      - name: Streaming Avatars
+        description: >-
+          Real-time interactive avatar streaming for conversational
+          experiences.
+      - name: Webhooks
+        description: >-
+          Subscribe to events such as video completion for downstream
+          automation.
+      - name: MCP and Skills
+        description: >-
+          Connect HeyGen to AI assistants via Model Context Protocol or
+          coding-agent Skills.
+    useCases:
+      - name: Personalized Sales Outreach
+        description: >-
+          Send 1:1 personalized prospect videos at scale.
+      - name: E-Learning and Training
+        description: >-
+          Produce and update course content without re-recording.
+      - name: Marketing Localization
+        description: >-
+          Translate hero videos into dozens of languages with preserved
+          presenter likeness.
+      - name: Podcast Repurposing
+        description: >-
+          Convert audio content into avatar-narrated video.
+      - name: Conversational Avatars
+        description: >-
+          Build interactive avatar agents for support and onboarding.
+    integrations:
+      - name: Claude
+      - name: Claude Code
+      - name: Cursor
+      - name: Zapier
+      - name: Make
+      - name: Webhooks
+      - name: OAuth (MCP)
+    authentication:
+      - type: API Key
+        description: >-
+          API keys generated in the HeyGen dashboard are passed in the
+          X-Api-Key header; MCP-based connections use OAuth.
+common:
+  - type: Website
+    url: https://www.heygen.com
+  - type: Documentation
+    url: https://developers.heygen.com
+  - type: Blog
+    url: https://www.heygen.com/blog
+  - type: Pricing
+    url: https://www.heygen.com/pricing
+  - type: TermsOfService
+    url: https://www.heygen.com/policy
+  - type: PrivacyPolicy
+    url: https://www.heygen.com/privacy-policy
+  - type: X
+    url: https://x.com/HeyGen_Official
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/heygen
+  - type: ChangeLog
+    url: https://developers.heygen.com/changelog
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
