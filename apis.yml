@@ -150,6 +150,8 @@ common:
     url: https://www.linkedin.com/company/heygen
   - type: ChangeLog
     url: https://developers.heygen.com/changelog
+  - type: LLMsTxt
+    url: https://developers.heygen.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
