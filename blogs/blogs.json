@@ -3,19 +3,12 @@
   "feeds": [
     {
       "source": "https://www.heygen.com/blog",
-      "feed_url": "https://www.heygen.com/blog",
-      "title": "",
-      "saved": 0,
-      "method": "none"
-    },
-    {
-      "source": "https://developers.heygen.com",
-      "feed_url": "https://developers.heygen.com",
-      "title": "",
-      "saved": 0,
-      "method": "none"
+      "feed_url": "",
+      "saved": 1,
+      "method": "agent-scrape"
     }
   ],
-  "post_count": 1,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 4,
+  "fetched": "2026-06-27T12:46:23Z",
+  "agent_pulled": "2026-06-27"
 }

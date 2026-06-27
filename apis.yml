@@ -52,7 +52,7 @@ apis:
         url: https://developers.heygen.com/
       - type: GettingStarted
         url: https://developers.heygen.com/docs/quick-start
-      - type: SignUp
+      - type: Signup
         url: https://app.heygen.com/signup
       - type: API
         url: https://developers.heygen.com/reference
@@ -150,7 +150,7 @@ common:
     url: https://www.linkedin.com/company/heygen
   - type: ChangeLog
     url: https://developers.heygen.com/changelog
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developers.heygen.com/llms.txt
 maintainers:
   - FN: Kin Lane
