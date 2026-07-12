@@ -1,0 +1,21 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/heygen-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: sec0
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  sources:
+  - openapi/heygen-openapi.yml
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: X-API-KEY
+  sources:
+  - openapi/heygen-openapi.yml

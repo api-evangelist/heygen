@@ -132,6 +132,14 @@ apis:
           API keys generated in the HeyGen dashboard are passed in the
           X-Api-Key header; MCP-based connections use OAuth.
 common:
+  - type: TrustCenter
+    url: security/heygen-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/heygen-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/heygen-domain-security.yml
+  - type: Authentication
+    url: authentication/heygen-authentication.yml
   - type: Website
     url: https://www.heygen.com
   - type: Documentation
