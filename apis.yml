@@ -132,6 +132,8 @@ apis:
           API keys generated in the HeyGen dashboard are passed in the
           X-Api-Key header; MCP-based connections use OAuth.
 common:
+  - type: AgenticAccess
+    url: agentic-access/heygen-agentic-access.yml
   - type: TrustCenter
     url: security/heygen-trust-center.yml
   - type: VulnerabilityDisclosure
