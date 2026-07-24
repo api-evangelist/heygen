@@ -1,0 +1,184 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account Digital Twins API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Digital Twins
+  description: Digital Twin creation, status, and deletion endpoints.
+paths:
+  /v2/video_avatar/{avatar_id}:
+    get:
+      summary: Get Digital Twin Generation Status
+      description: Checks the current status of the Digital Twin generation process and returns relevant details.
+      operationId: check-video-avatar-generation-status
+      tags:
+      - Digital Twins
+      security:
+      - ApiKeyAuth: []
+      parameters:
+      - name: avatar_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Unique identifier of the Digital Twin avatar.
+      responses:
+        '200':
+          description: Status retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type:
+                    - string
+                    - 'null'
+                  data:
+                    type: object
+                    properties:
+                      avatar_id:
+                        type: string
+                      avatar_name:
+                        type: string
+                      status:
+                        type: string
+                        enum:
+                        - in_progress
+                        - completed
+                        - failed
+                      created_at:
+                        type: integer
+                      preview_image_url:
+                        type:
+                        - string
+                        - 'null'
+                      preview_video_url:
+                        type:
+                        - string
+                        - 'null'
+                      error_message:
+                        type:
+                        - string
+                        - 'null'
+                      default_voice_id:
+                        type:
+                        - string
+                        - 'null'
+        '404':
+          description: Specified avatar ID was not found.
+      x-mint:
+        href: /reference/check-video-avatar-generation-status
+    delete:
+      summary: Delete Digital Twin
+      description: Deletes a Digital Twin by its ID.
+      operationId: delete-video-avatar
+      tags:
+      - Digital Twins
+      security:
+      - ApiKeyAuth: []
+      parameters:
+      - name: avatar_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Unique identifier of the Digital Twin avatar.
+      responses:
+        '200':
+          description: Digital Twin deleted successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 100
+                  data:
+                    type:
+                    - string
+                    - 'null'
+                  msg:
+                    type:
+                    - string
+                    - 'null'
+                  message:
+                    type:
+                    - string
+                    - 'null'
+        '404':
+          description: Avatar ID not found.
+      x-mint:
+        href: /reference/delete-video-avatar
+  /v2/video_avatar:
+    post:
+      summary: Create Digital Twin
+      description: Submits the URLs for the required training footage and consent statement to create a Digital Twin.
+      operationId: submit-video-avatar-creation-request
+      tags:
+      - Digital Twins
+      security:
+      - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - training_footage_url
+              - video_consent_url
+              - avatar_name
+              properties:
+                training_footage_url:
+                  type: string
+                  description: Public direct URL to MP4/H.264 training footage, minimum 720p and at least 30 seconds.
+                video_consent_url:
+                  type: string
+                  description: Public direct URL to the consent statement video.
+                avatar_name:
+                  type: string
+                avatar_group_id:
+                  type: string
+                callback_id:
+                  type: string
+                callback_url:
+                  type: string
+      responses:
+        '200':
+          description: Digital Twin creation initiated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type:
+                    - string
+                    - 'null'
+                  data:
+                    type: object
+                    properties:
+                      avatar_id:
+                        type: string
+                      avatar_group_id:
+                        type: string
+      x-mint:
+        href: /reference/submit-video-avatar-creation-request
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

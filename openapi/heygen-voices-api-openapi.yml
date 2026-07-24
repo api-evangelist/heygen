@@ -1,0 +1,177 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account Voices API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Voices
+  description: Voice listing and voice-management endpoints.
+paths:
+  /v2/voices:
+    get:
+      summary: List All Voices (V2)
+      description: ''
+      operationId: list-voices-v2
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"error\": null,\n  \"data\": {\n    \"voices\": [\n      {\n        \"voice_id\": \"0f059f9e54284391b48300f916cc6a01\",\n        \"language\": \"French\",\n        \"gender\": \"Female\",\n        \"name\": \"Celeste - Professional\",\n        \"preview_audio\": \"https://static.movio.la/voice_preview/ebde256ffc2d4e14a0542bf4bd8719fa.wav\",\n        \"support_pause\": true\n      },\n      {\n        \"voice_id\": \"1fe966a9dfa14b16ab4d146fabe868b5\",\n        \"language\": \"English\",\n        \"gender\": \"Female\",\n        \"name\": \"Ana - Cheerful\",\n        \"preview_audio\": \"https://static.movio.la/voice_preview/T4MYTkhp7F5SA9HRXHzL9A.wav\",\n        \"support_pause\": true\n      },\n      {\n        \"voice_id\": \"001cc6d54eae4ca2b5fb16ca8e8eb9bb\",\n        \"language\": \"Spanish\",\n        \"gender\": \"Male\",\n        \"name\": \"Elias - Natural\",\n        \"preview_audio\": \"https://static.movio.la/voice_preview/JmCb3rgMZnCjCAA9aacnGj.wav\",\n        \"support_pause\": false\n      },\n    ]\n  },\n}"
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/list-voices-v2
+      tags:
+      - Voices
+      security:
+      - ApiKeyAuth: []
+  /v1/brand_voice/list:
+    get:
+      summary: List Brand Voices
+      description: This endpoint is used to retrieve a list of brand voices your created
+      operationId: list-brand-voices
+      parameters:
+      - name: limit
+        in: query
+        description: Limit of brand voices to return
+        schema:
+          type: integer
+          format: int32
+          default: 100
+      - name: token
+        in: query
+        description: Pagination token
+        schema:
+          type: string
+      - name: name_only
+        in: query
+        description: Return the name of the brand voices
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/list-brand-voices
+      tags:
+      - Voices
+      security:
+      - ApiKeyAuth: []
+  /v1/brand_voice/{brand_voice_id}:
+    post:
+      summary: Update Brand Voice
+      description: Updates an existing brand voice with specified changes. Only the fields that need to be modified should be included in the request body.
+      operationId: update-brand-voice
+      parameters:
+      - name: brand_voice_id
+        in: path
+        description: The unique identifier of the brand voice to update
+        schema:
+          type: string
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: New name for the brand voice
+                blacklist:
+                  type: array
+                  description: List of words that should not be translated (e.g., brand names, person names)
+                  items:
+                    type: string
+                whitelist:
+                  type: array
+                  description: List of word pairs for forced translations | [["AI", "artificial intelligence"]]
+                  items:
+                    type: string
+                tones:
+                  type: array
+                  description: List of tone keywords to influence the voice
+                  items:
+                    type: string
+                vocabulary:
+                  type: array
+                  description: List of word pairs for pronunciation guidance
+                  items:
+                    type: string
+                tone:
+                  type: string
+                  description: Overall tone description
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/update-brand-voice
+      tags:
+      - Voices
+      security:
+      - ApiKeyAuth: []
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

@@ -1,0 +1,259 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account Folders API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Folders
+  description: Folder management endpoints.
+paths:
+  /v1/folders/create:
+    post:
+      summary: Create Folder
+      description: ''
+      operationId: create-folder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the folder
+                  default: test
+                project_type:
+                  type: string
+                  description: 'Project type: `video_translate`, `instant_avatar`, `video`, `asset`, `brand_kit`, `mixed`.'
+                parent_id:
+                  type: string
+                  description: Parent folder ID
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/create-folder
+      tags:
+      - Folders
+      security:
+      - ApiKeyAuth: []
+  /v1/folders:
+    get:
+      summary: List Folders
+      description: Retrieves a list of folders with optional filters.
+      operationId: list-folders
+      parameters:
+      - name: limit
+        in: query
+        description: Number of folders to return
+        schema:
+          type: integer
+          format: int32
+      - name: parent_id
+        in: query
+        description: Filter by parent folder ID
+        schema:
+          type: string
+      - name: name_filter
+        in: query
+        description: Search folders by name
+        schema:
+          type: string
+      - name: is_trash
+        in: query
+        description: Filter trashed folders
+        schema:
+          type: boolean
+      - name: token
+        in: query
+        description: A pagination token used for fetching the next set of folders
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/list-folders
+      tags:
+      - Folders
+      security:
+      - ApiKeyAuth: []
+  /v1/folders/{folder_id}:
+    post:
+      summary: Update Folder (Rename Only)
+      description: Updates the name of an existing folder.
+      operationId: update-folder
+      parameters:
+      - name: folder_id
+        in: path
+        schema:
+          type: string
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: New folder name
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/update-folder
+      tags:
+      - Folders
+      security:
+      - ApiKeyAuth: []
+  /v1/folders/{folder_id}/trash:
+    post:
+      summary: Trash Folder
+      description: Moves a folder to the trash.
+      operationId: trash-folder
+      parameters:
+      - name: folder_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/trash-folder
+      tags:
+      - Folders
+      security:
+      - ApiKeyAuth: []
+  /v1/folders/{folder_id}/restore:
+    post:
+      summary: Restore Folder
+      description: ''
+      operationId: restore-folder
+      parameters:
+      - name: folder_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/restore-folder
+      tags:
+      - Folders
+      security:
+      - ApiKeyAuth: []
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

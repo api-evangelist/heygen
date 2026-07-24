@@ -1,0 +1,373 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account Streaming API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Streaming
+  description: Streaming avatar session lifecycle and task endpoints.
+paths:
+  /v1/streaming.task:
+    post:
+      summary: Send Task
+      description: This endpoint is used to send a text to an Interactive Avatar, prompting it to speak the provided text.
+      operationId: send-task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                RAW_BODY:
+                  type: string
+                  default: '{"session_id": "<SESSION_ID>","text": "<TEXT>"}'
+                  format: json
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/send-task
+      tags:
+      - Streaming
+      security:
+      - ApiKeyAuth: []
+  /v1/streaming.stop:
+    post:
+      summary: Close Session
+      description: This endpoint is used to terminate an active streaming session.
+      operationId: close-session
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                session_id:
+                  type: string
+                  description: The ID of the session to be stopped.
+                  default: session_id
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/close-session
+      tags:
+      - Streaming
+      security:
+      - ApiKeyAuth: []
+  /v1/streaming.start:
+    post:
+      summary: Start Session
+      description: This endpoint is used to start the connection for an existing streaming session.
+      operationId: start-session
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                session_id:
+                  type: string
+                  default: '123456'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/start-session
+      tags:
+      - Streaming
+      security:
+      - ApiKeyAuth: []
+  /v1/streaming.list:
+    get:
+      summary: List Sessions
+      description: This endpoint is used to retrieve a list of currently active streaming sessions.
+      operationId: list-sessions
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/list-sessions
+      tags:
+      - Streaming
+      security:
+      - ApiKeyAuth: []
+  /v1/streaming.new:
+    post:
+      summary: New Session
+      description: This endpoint is used to initiate a new streaming session.
+      operationId: new-session
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quality:
+                  type: string
+                  default: medium
+                avatar_id:
+                  type: string
+                  description: ID of the Interactive Avatar you would like to use with the Streaming API
+                voice_name:
+                  type: string
+                  description: voice to use
+                voice:
+                  type: object
+                  properties:
+                    voice_id:
+                      type: string
+                    rate:
+                      type: number
+                      default: 1
+                      format: float
+                    emotion:
+                      type: string
+                knowledge_base:
+                  type: string
+                  description: Knowledge Base prompt used for chat task type.
+                video_encoding:
+                  type: string
+                  default: VP8
+                disable_idle_timeout:
+                  type: boolean
+                  description: By default session has a 2 minute idle timeout, setting to true disables it
+                  default: false
+                version:
+                  type: string
+                  default: v2
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/new-session
+      tags:
+      - Streaming
+      security:
+      - ApiKeyAuth: []
+  /v1/streaming.create_token:
+    post:
+      summary: Create Session Token
+      description: This endpoint is used to generate a new access token for a streaming session.
+      operationId: create-session-token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                RAW_BODY:
+                  type: string
+                  default: '{}'
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/create-session-token
+      tags:
+      - Streaming
+      security:
+      - ApiKeyAuth: []
+  /v1/streaming.interrupt:
+    post:
+      summary: Interrupt Task
+      description: This endpoint is used to interrupt the speaking of an Interactive Avatar.
+      operationId: interrupt-task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                session_id:
+                  type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/interrupt-task
+      tags:
+      - Streaming
+      security:
+      - ApiKeyAuth: []
+  /v1/streaming/avatar.list:
+    get:
+      summary: List Streaming Avatars
+      description: This API endpoint allows you to retrieve a list of public and custom interactive avatars.
+      operationId: streaming-avatar-list
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/streaming-avatar-list
+      tags:
+      - Streaming
+      security:
+      - ApiKeyAuth: []
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

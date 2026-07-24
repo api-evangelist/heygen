@@ -1,0 +1,155 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account Video Translation API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Video Translation
+  description: Video translation and supported-language endpoints.
+paths:
+  /v2/video_translate/target_languages:
+    get:
+      summary: List Supported Languages
+      description: ''
+      operationId: list-supported-languages
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/list-supported-languages
+      tags:
+      - Video Translation
+      security:
+      - ApiKeyAuth: []
+  /v2/video_translate/{video_translate_id}:
+    get:
+      summary: Check Translation Status
+      description: ''
+      operationId: video-translate-status
+      parameters:
+      - name: video_translate_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/video-translate-status
+      tags:
+      - Video Translation
+      security:
+      - ApiKeyAuth: []
+  /v2/video_translate:
+    post:
+      summary: Translate Video
+      description: ''
+      operationId: video-translate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                video_url:
+                  type: string
+                title:
+                  type: string
+                output_language:
+                  type: string
+                translate_audio_only:
+                  type: boolean
+                speaker_num:
+                  type: integer
+                  format: int32
+                callback_id:
+                  type: string
+                enable_dynamic_duration:
+                  type: string
+                brand_voice_id:
+                  type: string
+                callback_url:
+                  type: string
+                  description: Optional callback_url
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/video-translate
+      tags:
+      - Video Translation
+      security:
+      - ApiKeyAuth: []
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

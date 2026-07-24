@@ -1,0 +1,100 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account Assets API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Assets
+  description: Asset upload endpoints.
+paths:
+  /v1/asset:
+    post:
+      summary: Upload Asset
+      description: Uploads a media file (image, video, or audio) to the authenticated user's HeyGen account and returns the asset ID for future use.
+      operationId: upload-asset
+      tags:
+      - Assets
+      servers:
+      - url: https://upload.heygen.com
+      security:
+      - ApiKeyAuth: []
+      parameters:
+      - name: Content-Type
+        in: header
+        description: MIME type of the file to upload.
+        required: true
+        schema:
+          type: string
+          enum:
+          - image/png
+          - image/jpeg
+          - video/mp4
+          - video/webm
+          - audio/mpeg
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+              description: Raw binary file contents.
+      responses:
+        '200':
+          description: Asset uploaded successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 100
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      file_type:
+                        type: string
+                      folder_id:
+                        type: string
+                      meta:
+                        type:
+                        - string
+                        - 'null'
+                      created_ts:
+                        type: integer
+                      url:
+                        type: string
+                      image_key:
+                        type:
+                        - string
+                        - 'null'
+                  msg:
+                    type:
+                    - string
+                    - 'null'
+                  message:
+                    type:
+                    - string
+                    - 'null'
+      x-mint:
+        href: /reference/upload-asset
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

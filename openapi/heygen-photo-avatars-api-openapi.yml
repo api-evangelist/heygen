@@ -1,0 +1,613 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account Photo Avatars API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Photo Avatars
+  description: Photo avatar generation, training, and enhancement endpoints.
+paths:
+  /v2/photo_avatar/photo/generate:
+    post:
+      summary: Generate photo avatar photos
+      description: This endpoint will generate photos that can be used to create photo avatars, returns a generation id, which can be used in the check generation status endpoint to get status and final image/image keys
+      operationId: generate-photo-avatar-photos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                age:
+                  type: string
+                  enum:
+                  - Young Adult
+                  - Early Middle Age
+                  - Late Middle Age
+                  - Senior
+                  - Unspecified
+                gender:
+                  type: string
+                  enum:
+                  - Woman
+                  - Man
+                  - Unspecified
+                ethnicity:
+                  type: string
+                  enum:
+                  - White
+                  - Black
+                  - Asian American
+                  - East Asian
+                  - South East Asian
+                  - South Asian
+                  - Middle Eastern
+                  - Pacific
+                  - Hispanic
+                  - Unspecified
+                orientation:
+                  type: string
+                  enum:
+                  - square
+                  - horizontal
+                  - vertical
+                pose:
+                  type: string
+                  enum:
+                  - half_body
+                  - close_up
+                  - full_body
+                style:
+                  type: string
+                  enum:
+                  - Realistic
+                  - Pixar
+                  - Cinematic
+                  - Vintage
+                  - Noir
+                  - Cyberpunk
+                  - Unspecified
+                appearance:
+                  type: string
+                  description: Description/Prompt of the generated avatar photo, maximum 1000 characters
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"error\": null,\n  \"data\": {\n    \"generation_id\": \"51be01eda38e4c2b9836f06957f66b7d\"\n  }\n}"
+              schema:
+                type: object
+                properties:
+                  error: {}
+                  data:
+                    type: object
+                    properties:
+                      generation_id:
+                        type: string
+                        example: 51be01eda38e4c2b9836f06957f66b7d
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/generate-photo-avatar-photos
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/photo_avatar/look/generate:
+    post:
+      summary: Generate photo avatar looks
+      description: This endpoint can be used to generate additional looks for a trained photo avatar group. The photo avatar group must be trained to use this endpoint.
+      operationId: generate-photo-avatar-looks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                group_id:
+                  type: string
+                prompt:
+                  type: string
+                  description: Prompt to generate different looks
+                orientation:
+                  type: string
+                  enum:
+                  - square
+                  - horizontal
+                  - vertical
+                pose:
+                  type: string
+                  enum:
+                  - half_body
+                  - close_up
+                  - full_body
+                style:
+                  type: string
+                  enum:
+                  - Realistic
+                  - Pixar
+                  - Cinematic
+                  - Vintage
+                  - Noir
+                  - Cyberpunk
+                  - Unspecified
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/generate-photo-avatar-looks
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/photo_avatar/generation/{generation_id}:
+    get:
+      summary: Check photo/look generation status
+      description: Check photo/look generation status
+      operationId: check-photolook-generation-status
+      parameters:
+      - name: generation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"error\": null,\n  \"data\": {\n    \"id\": \"51be01eda38e4c2b9836f06957f66b7d\",\n    \"status\": \"success\",\n    \"msg\": null,\n    \"image_url_list\": [\n      \"https://resource2.heygen.ai/image/d9e6bbbba83a400885fe9df1abe5f131/original\",\n      \"https://resource2.heygen.ai/image/d0130e2c57024e208f5aab3bdfd5fefb/original\",\n      \"https://resource2.heygen.ai/image/d982e90bb20f410786914732eac634b7/original\",\n      \"https://resource2.heygen.ai/image/dfef1b03e4b2439c85ada1458df37fc2/original\"\n    ],\n    \"image_key_list\": [\n      \"image/d9e6bbbba83a400885fe9df1abe5f131/original\",\n      \"image/d0130e2c57024e208f5aab3bdfd5fefb/original\",\n      \"image/d982e90bb20f410786914732eac634b7/original\",\n      \"image/dfef1b03e4b2439c85ada1458df37fc2/original\"\n    ]\n  }\n}"
+              schema:
+                type: object
+                properties:
+                  error: {}
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 51be01eda38e4c2b9836f06957f66b7d
+                      status:
+                        type: string
+                        example: success
+                      msg: {}
+                      image_url_list:
+                        type: array
+                        items:
+                          type: string
+                          example: https://resource2.heygen.ai/image/d9e6bbbba83a400885fe9df1abe5f131/original
+                      image_key_list:
+                        type: array
+                        items:
+                          type: string
+                          example: image/d9e6bbbba83a400885fe9df1abe5f131/original
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/check-photolook-generation-status
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/photo_avatar/avatar_group/create:
+    post:
+      summary: Create photo avatar group
+      description: 'This api can be used to create a photo avatar group
+
+        For generated photo avatar, pass the generation_id and the image_key
+
+        For user uploaded avatar, first upload the photo using the upload assets api. Then use the key as image_key
+
+        This api only allows using one photo to establish the identity, you can add more photos using the add looks api'
+      operationId: create-photo-avatar-group
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                image_key:
+                  type: string
+                generation_id:
+                  type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/create-photo-avatar-group
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/photo_avatar/avatar_group/add:
+    post:
+      summary: Add looks to photo avatar group
+      description: Add other looks to existing photo avatar group
+      operationId: add-looks-to-photo-avatar-group
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                group_id:
+                  type: string
+                  description: avatar group id to add looks into
+                image_keys:
+                  type: array
+                  description: A list of images you want to add to the avatar group, maximum 4 at a time
+                  items:
+                    type: string
+                name:
+                  type: string
+                  description: Name of the looks
+                generation_id:
+                  type: string
+                  description: Generation id what is used to generate the image_keys, it must be passed in if the image is generated, if it's an upload image, then this is optional
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/add-looks-to-photo-avatar-group
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/photo_avatar/train:
+    post:
+      summary: Train photo avatar group
+      description: Train a photo avatar group.
+      operationId: train-photo-avatar-group
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                group_id:
+                  type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/train-photo-avatar-group
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/photo_avatar/train/status/{group_id}:
+    get:
+      summary: Get training job status
+      description: Get the training status of a avatar group
+      operationId: get-training-job-status
+      parameters:
+      - name: group_id
+        in: path
+        description: Avatar group id
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"error\": null,\n  \"data\": {\n    \"status\": \"pending\",\n    \"error_msg\": null,\n    \"created_at\": 1733861263,\n    \"updated_at\": null\n  }\n}"
+              schema:
+                type: object
+                properties:
+                  error: {}
+                  data:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                        example: pending
+                      error_msg: {}
+                      created_at:
+                        type: integer
+                        example: 1733861263
+                        default: 0
+                      updated_at: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/get-training-job-status
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/photo_avatar/add_motion:
+    post:
+      summary: Add motion
+      description: Add motion to an existing photo avatar, returns the id of the new avatar that has motion
+      operationId: add-motion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: photo avatar id
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/add-motion
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/photo_avatar/add_sound_effect:
+    post:
+      summary: Add sound effect
+      description: This api adds sound effect into a photo avatar
+      operationId: add-sound-effect
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: photo avatar id
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/add-sound-effect
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/photo_avatar/{id}:
+    get:
+      summary: Photo avatar details
+      description: Get the details of a photo avatar
+      operationId: photo-avatar-details
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/photo-avatar-details
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/photo_avatar/upscale:
+    post:
+      summary: Upscale an avatar
+      description: Call this api to upscale an avatar, can only be called on an avatar that has motion, returns the photo avatar id that is upscaled
+      operationId: upscale-an-avatar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: avatar id
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/upscale-an-avatar
+      tags:
+      - Photo Avatars
+      security:
+      - ApiKeyAuth: []
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

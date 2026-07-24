@@ -1,0 +1,333 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account Webhooks API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Webhooks
+  description: Webhook event and endpoint management.
+paths:
+  /v1/webhook/endpoint.list:
+    get:
+      summary: List Webhook Endpoints
+      description: list all your registered webhook endpoints
+      operationId: list-webhook-endpoints
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{"code": 100, "data": [{"status": "enabled", "username": "1233456789", "created_at": "2023-04-03T03:25:54", "url": "https://helloworld.com", "events": null, "endpoint_id": "6981dc2e59944a4ba195bcc1dd3be1af", "secret": "whsec_aZUbuN_UAC1zzuuYr_QVHA=="}, {"status": "enabled", "username": "bcbb0a7445354c34a5bd5870d7bb30a0", "created_at": "2023-04-03T03:25:54", "url": "https://craft-api.surreal-ai.com/v1/webhook/callback.test", "events": null, "endpoint_id": "fdfbea36e773416ea6acb5e1123079f6", "secret": "whsec_12345435346534"}], "msg": null}'
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 100
+                    default: 0
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        status:
+                          type: string
+                          example: enabled
+                        username:
+                          type: string
+                          example: '1233456789'
+                        created_at:
+                          type: string
+                          example: '2023-04-03T03:25:54'
+                        url:
+                          type: string
+                          example: https://helloworld.com
+                        events: {}
+                        endpoint_id:
+                          type: string
+                          example: 6981dc2e59944a4ba195bcc1dd3be1af
+                        secret:
+                          type: string
+                          example: whsec_aZUbuN_UAC1zzuuYr_QVHA==
+                  msg: {}
+      deprecated: false
+      x-mint:
+        href: /reference/list-webhook-endpoints
+      tags:
+      - Webhooks
+      security:
+      - ApiKeyAuth: []
+  /v1/webhook/endpoint.add:
+    post:
+      summary: Add a Webhook Endpoint
+      description: ''
+      operationId: add-a-webhook-endpoint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  description: The URL where you will receive events from HeyGen.
+                events:
+                  type: array
+                  description: The events that your URL is set to receive. `None` means all events. You can see supported events at [`/v1/webhook/webhook.list`](https://docs.heygen.com/reference/list-available-webhook-events).
+                  items:
+                    type: string
+                entity_id:
+                  type: string
+                  description: Optional. The specific entity ID associated with the webhook. eg. video_id,project_id
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{"code": 100, "data": {"endpoint_id": "038fb5f9a62d48e5af08834d20404606", "username": "123456", "url": "https://helloworld.com", "status": "enabled", "events": null, "secret": "whsec_123456", "created_at": "2023-04-03T05:40:46.769845"}, "msg": null}'
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 100
+                    default: 0
+                  data:
+                    type: object
+                    properties:
+                      endpoint_id:
+                        type: string
+                        example: 038fb5f9a62d48e5af08834d20404606
+                      username:
+                        type: string
+                        example: '123456'
+                      url:
+                        type: string
+                        example: https://helloworld.com
+                      status:
+                        type: string
+                        example: enabled
+                      events: {}
+                      secret:
+                        type: string
+                        example: whsec_123456
+                      created_at:
+                        type: string
+                        example: '2023-04-03T05:40:46.769845'
+                  msg: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{"code":400542,"message":"Url of this webhook endpoint is invalid"}'
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 400542
+                    default: 0
+                  message:
+                    type: string
+                    example: Url of this webhook endpoint is invalid
+      deprecated: false
+      x-mint:
+        href: /reference/add-a-webhook-endpoint
+      tags:
+      - Webhooks
+      security:
+      - ApiKeyAuth: []
+  /v1/webhook/endpoint.update:
+    patch:
+      summary: Update a Webhook Endpoint
+      description: update an existing webhook endpoint
+      operationId: update-a-webhook-endpoint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                endpoint_id:
+                  type: string
+                  description: the endpoint's id you want to update
+                url:
+                  type: string
+                  description: the new post url you want to set for the endpoint
+                events:
+                  type: array
+                  description: the new events array you want to set for your endpoint
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{"code": 100, "data": {"endpoint_id": "123456", "url": "https://helloworld.com", "secret": "whsec_123456", "status": "enabled", "events": null, "username": "123456", "created_at": "2023-04-03T05:40:47"}, "msg": null}'
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 100
+                    default: 0
+                  data:
+                    type: object
+                    properties:
+                      endpoint_id:
+                        type: string
+                        example: '123456'
+                      url:
+                        type: string
+                        example: https://helloworld.com
+                      secret:
+                        type: string
+                        example: whsec_123456
+                      status:
+                        type: string
+                        example: enabled
+                      events: {}
+                      username:
+                        type: string
+                        example: '123456'
+                      created_at:
+                        type: string
+                        example: '2023-04-03T05:40:47'
+                  msg: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{"code":400542,"message":"Url of this webhook endpoint is invalid"}'
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 400542
+                    default: 0
+                  message:
+                    type: string
+                    example: Url of this webhook endpoint is invalid
+        '404':
+          description: '404'
+          content:
+            text/plain:
+              examples:
+                Result:
+                  value: '{"code":400131,"message":"Webhook endpoint not found"}'
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 400131
+                    default: 0
+                  message:
+                    type: string
+                    example: Webhook endpoint not found
+      deprecated: false
+      x-mint:
+        href: /reference/update-a-webhook-endpoint
+      tags:
+      - Webhooks
+      security:
+      - ApiKeyAuth: []
+  /v1/webhook/endpoint.delete:
+    delete:
+      summary: Delete a Webhook Endpoint
+      description: delete an existing webhook endpoint
+      operationId: delete-a-webhook-endpoint
+      parameters:
+      - name: endpoint_id
+        in: query
+        description: the endpoint's id you want to delete
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{"code": 100, "data": null, "msg": null}'
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 100
+                    default: 0
+                  data: {}
+                  msg: {}
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{"code":400131,"message":"Webhook endpoint not found"}'
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 400131
+                    default: 0
+                  message:
+                    type: string
+                    example: Webhook endpoint not found
+      deprecated: false
+      x-mint:
+        href: /reference/delete-a-webhook-endpoint
+      tags:
+      - Webhooks
+      security:
+      - ApiKeyAuth: []
+  /v1/webhook/webhook.list:
+    get:
+      summary: List Available Webhook Events
+      description: list all supported webhook events
+      operationId: list-available-webhook-events
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{"code": 100, "data": ["avatar_video.success", "avatar_video.fail"], "msg": null}%'
+      deprecated: false
+      x-mint:
+        href: /reference/list-available-webhook-events
+      tags:
+      - Webhooks
+      security:
+      - ApiKeyAuth: []
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

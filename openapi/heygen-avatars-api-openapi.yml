@@ -1,0 +1,137 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account Avatars API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Avatars
+  description: Avatar and avatar group discovery endpoints.
+paths:
+  /v2/avatars:
+    get:
+      summary: List All Avatars (V2)
+      description: You can get your Avatars and Talking Photos(Photo Avatars) with this endpoint.
+      operationId: list-avatars-v2
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/list-avatars-v2
+      tags:
+      - Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/avatar_group.list:
+    get:
+      summary: List All Avatar Groups
+      description: List all avatar groups
+      operationId: list-all-avatar-groups
+      parameters:
+      - name: include_public
+        in: query
+        description: Whether to include all public avatar groups
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/list-all-avatar-groups
+      tags:
+      - Avatars
+      security:
+      - ApiKeyAuth: []
+  /v2/avatar_group/{group_id}/avatars:
+    get:
+      summary: List All Avatars in one avatar group
+      description: List all avatars in one avatar group
+      operationId: list-all-avatars-in-one-avatar-group
+      parameters:
+      - name: group_id
+        in: path
+        description: Avatar group id
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/list-all-avatars-in-one-avatar-group
+      tags:
+      - Avatars
+      security:
+      - ApiKeyAuth: []
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

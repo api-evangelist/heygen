@@ -1,0 +1,237 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account Templates API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Templates
+  description: Template listing, retrieval, and template-based video generation.
+paths:
+  /v2/template/{template_id}/generate:
+    post:
+      summary: Generate Video from Template
+      description: This API now supports New AI Studio!
+      operationId: generate-from-template-v2
+      parameters:
+      - name: template_id
+        in: path
+        schema:
+          type: string
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                caption:
+                  type: boolean
+                  default: false
+                callback_id:
+                  type: string
+                  default: <callback_id>
+                title:
+                  type: string
+                  default: Untitled Video
+                variables:
+                  type: object
+                  description: variables
+                  properties: {}
+                dimension:
+                  type: object
+                  description: (Optional)The dimension of the output video, you can use this to set the output video to be a different one from template, though the aspect ratio should be the same
+                  properties:
+                    width:
+                      type: integer
+                      default: 1280
+                      format: int32
+                    height:
+                      type: integer
+                      default: 720
+                      format: int32
+                include_gif:
+                  type: boolean
+                  description: include a GIF preview download URL in the webhook response
+                  default: false
+                enable_sharing:
+                  type: boolean
+                  description: make the sharing page of this video public upon creation
+                  default: false
+                folder_id:
+                  type: string
+                  description: enable users to specify video folder destination
+                brand_voice_id:
+                  type: string
+                  description: Brand Voice ID
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/generate-from-template-v2
+      tags:
+      - Templates
+      security:
+      - ApiKeyAuth: []
+  /v2/template/{template_id}:
+    get:
+      summary: Retrieve Template Details
+      description: This API now supports New AI Studio!
+      operationId: get-template-v2
+      parameters:
+      - name: template_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/get-template-v2
+      tags:
+      - Templates
+      security:
+      - ApiKeyAuth: []
+  /v2/templates:
+    get:
+      summary: List Templates
+      description: This API now supports New AI Studio!
+      operationId: list-templates-v2
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/list-templates-v2
+      tags:
+      - Templates
+      security:
+      - ApiKeyAuth: []
+  /v3/template/{template_id}:
+    get:
+      summary: Retrieve Template Details (V3)
+      description: Retrieves template details by ID, including variables available for replacement and scene mappings for the New AI Studio.
+      operationId: get-template-v3
+      tags:
+      - Templates
+      security:
+      - ApiKeyAuth: []
+      parameters:
+      - name: template_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Unique identifier of the template.
+      responses:
+        '200':
+          description: Template details retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type:
+                    - string
+                    - 'null'
+                  data:
+                    type: object
+                    properties:
+                      version:
+                        type: string
+                      variables:
+                        type: object
+                      scenes:
+                        type:
+                        - array
+                        - 'null'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            script:
+                              type: string
+                            variables:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  name:
+                                    type: string
+                                  type:
+                                    type: string
+      x-mint:
+        href: /reference/get-template-v3
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

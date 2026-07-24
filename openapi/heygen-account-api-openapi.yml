@@ -1,0 +1,98 @@
+openapi: 3.1.0
+info:
+  title: HeyGen Account API
+  version: 4.0.8
+  description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
+servers:
+- url: https://api.heygen.com
+security:
+- ApiKeyAuth: []
+tags:
+- name: Account
+  description: Quota and account information endpoints.
+paths:
+  /v2/user/remaining_quota:
+    get:
+      summary: Get Remaining Quota
+      description: ''
+      operationId: get-remaining-quota-v2
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{"error": null, "data": {"remaining_quota": 60}}'
+              schema:
+                type: object
+                properties:
+                  error: {}
+                  data:
+                    type: object
+                    properties:
+                      remaining_quota:
+                        type: integer
+                        example: 60
+                        default: 0
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/get-remaining-quota-v2
+      tags:
+      - Account
+      security:
+      - ApiKeyAuth: []
+  /v1/user/me:
+    get:
+      summary: Get Current User Information
+      description: ''
+      operationId: get-current-user-information
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      x-mint:
+        href: /reference/get-current-user-information
+      tags:
+      - Account
+      security:
+      - ApiKeyAuth: []
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-key
+      x-default: <your-api-key>
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
