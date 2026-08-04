@@ -1,0 +1,36 @@
+{
+  "provider": "heygen",
+  "sources": [
+    "heygen-account-api-openapi.yml",
+    "heygen-assets-api-openapi.yml",
+    "heygen-avatars-api-openapi.yml",
+    "heygen-digital-twins-api-openapi.yml",
+    "heygen-folders-api-openapi.yml",
+    "heygen-photo-avatars-api-openapi.yml",
+    "heygen-streaming-api-openapi.yml",
+    "heygen-templates-api-openapi.yml",
+    "heygen-video-translation-api-openapi.yml",
+    "heygen-videos-api-openapi.yml",
+    "heygen-voices-api-openapi.yml",
+    "heygen-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "heygen-account-api-openapi.yml",
+    "heygen-assets-api-openapi.yml",
+    "heygen-avatars-api-openapi.yml",
+    "heygen-digital-twins-api-openapi.yml",
+    "heygen-folders-api-openapi.yml",
+    "heygen-photo-avatars-api-openapi.yml",
+    "heygen-streaming-api-openapi.yml",
+    "heygen-templates-api-openapi.yml",
+    "heygen-video-translation-api-openapi.yml",
+    "heygen-videos-api-openapi.yml",
+    "heygen-voices-api-openapi.yml",
+    "heygen-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
