@@ -1,0 +1,492 @@
+{
+  "item": [
+    {
+      "id": "ce9323ec-f31a-4cef-ab07-5f6e11cec7f8",
+      "name": "Digital Twins",
+      "description": {
+        "content": "Digital Twin creation, status, and deletion endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7e3864bf-1164-4c38-88e7-358bb2462ec7",
+          "name": "Get Digital Twin Generation Status",
+          "request": {
+            "name": "Get Digital Twin Generation Status",
+            "description": {
+              "content": "Checks the current status of the Digital Twin generation process and returns relevant details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "video_avatar",
+                ":avatar_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "avatar_id",
+                  "description": "(Required) Unique identifier of the Digital Twin avatar."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "592521b2-15e9-40d2-a1c5-0c29d4186215",
+              "name": "Status retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "video_avatar",
+                    ":avatar_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "avatar_id",
+                      "description": "(Required) Unique identifier of the Digital Twin avatar."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"data\": {\n    \"avatar_id\": \"string\",\n    \"avatar_name\": \"string\",\n    \"status\": \"completed\",\n    \"created_at\": 8225,\n    \"preview_image_url\": \"string\",\n    \"preview_video_url\": \"string\",\n    \"error_message\": \"string\",\n    \"default_voice_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7aec2ae0-6d1f-4275-8414-cc60d57eac5b",
+              "name": "Specified avatar ID was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "video_avatar",
+                    ":avatar_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "avatar_id",
+                      "description": "(Required) Unique identifier of the Digital Twin avatar."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b4a4878c-20f5-4c7a-aee5-20d615f72e31",
+          "name": "Delete Digital Twin",
+          "request": {
+            "name": "Delete Digital Twin",
+            "description": {
+              "content": "Deletes a Digital Twin by its ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "video_avatar",
+                ":avatar_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "avatar_id",
+                  "description": "(Required) Unique identifier of the Digital Twin avatar."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6cb2f9c6-8241-4246-bd81-45ea7a47f8ee",
+              "name": "Digital Twin deleted successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "video_avatar",
+                    ":avatar_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "avatar_id",
+                      "description": "(Required) Unique identifier of the Digital Twin avatar."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 100,\n  \"data\": \"string\",\n  \"msg\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "acb06955-4a1e-4484-88cd-109df881c93a",
+              "name": "Avatar ID not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "video_avatar",
+                    ":avatar_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "avatar_id",
+                      "description": "(Required) Unique identifier of the Digital Twin avatar."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5fffd2c7-720d-4973-9002-87beb2803dfe",
+          "name": "Create Digital Twin",
+          "request": {
+            "name": "Create Digital Twin",
+            "description": {
+              "content": "Submits the URLs for the required training footage and consent statement to create a Digital Twin.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "video_avatar"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"training_footage_url\": \"<string>\",\n  \"video_consent_url\": \"<string>\",\n  \"avatar_name\": \"<string>\",\n  \"avatar_group_id\": \"<string>\",\n  \"callback_id\": \"<string>\",\n  \"callback_url\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0a4f72ae-5354-4d43-ad44-a1a81d31b3ff",
+              "name": "Digital Twin creation initiated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "video_avatar"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"training_footage_url\": \"<string>\",\n  \"video_consent_url\": \"<string>\",\n  \"avatar_name\": \"<string>\",\n  \"avatar_group_id\": \"<string>\",\n  \"callback_id\": \"<string>\",\n  \"callback_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"data\": {\n    \"avatar_id\": \"string\",\n    \"avatar_group_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.heygen.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3f3f5799-03fa-45ac-8109-93a917402ed1",
+    "name": "HeyGen Account Digital Twins API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI specification for the HeyGen API endpoints referenced across the documentation.",
+      "type": "text/plain"
+    }
+  }
+}

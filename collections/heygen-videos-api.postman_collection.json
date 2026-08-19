@@ -1,0 +1,918 @@
+{
+  "item": [
+    {
+      "id": "f8c6d9c8-10f3-4547-b6bb-dad7e40f3557",
+      "name": "Videos",
+      "description": {
+        "content": "Video generation, retrieval, and management endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3f651773-91d1-4bd7-acd5-2600d77c7709",
+          "name": "Retrieve Video Status/Details",
+          "request": {
+            "name": "Retrieve Video Status/Details",
+            "description": {
+              "content": "This endpoint allows you to retrieve the status and details of a specific video.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "video_status.get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "video_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6c00de37-5c97-44e3-b8ff-6762a74466d8",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video_status.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "video_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06406943-f8f6-4af2-ae10-a0ca97b2117f",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video_status.get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "video_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"code\\\": 400,\\n  \\\"message\\\": \\\"Invlid parameters\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "801903de-9e9b-4754-a3ed-54dd81fe5051",
+          "name": "Delete a Video",
+          "request": {
+            "name": "Delete a Video",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "video.delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "video_id",
+                  "value": "<string>",
+                  "description": "id of the video you want to delete"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "23b82ab3-b25f-4f38-bc3c-b1f56bb2a6f4",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video.delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "video_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\\"code\\\": 100, \\\"data\\\": null, \\\"msg\\\": null}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a2208bd-9439-4291-bfd3-24a0e8c6ccb7",
+              "name": "404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video.delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "video_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\\"code\\\":40104,\\\"message\\\":\\\"Video not found\\\"}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ea41e2a-2fc7-4043-bdd5-86f85df46578",
+          "name": "Create Avatar Video (V2)",
+          "request": {
+            "name": "Create Avatar Video (V2)",
+            "description": {
+              "content": "This API now generates videos with our New AI Studio backend.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "video",
+                "generate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dimension\": {\n    \"width\": 1280,\n    \"height\": 720\n  },\n  \"video_inputs\": [\n    {\n      \"character\": {\n        \"type\": \"avatar\",\n        \"avatar_id\": \"<string>\",\n        \"talking_photo_id\": \"<string>\",\n        \"scale\": 1,\n        \"avatar_style\": \"normal\",\n        \"offset\": {\n          \"x\": \"<float>\",\n          \"y\": \"<float>\"\n        },\n        \"matting\": \"<string>\",\n        \"circle_background_color\": \"<string>\",\n        \"talking_photo_style\": \"<string>\",\n        \"talking_style\": \"<string>\",\n        \"expression\": \"<string>\",\n        \"super_resolution\": \"<string>\"\n      },\n      \"voice\": {\n        \"type\": \"<string>\",\n        \"voice_id\": \"<string>\",\n        \"input_text\": \"<string>\",\n        \"speed\": \"<float>\",\n        \"pitch\": \"<integer>\",\n        \"emotion\": \"<string>\",\n        \"locale\": \"<string>\"\n      },\n      \"background\": {\n        \"type\": \"<string>\",\n        \"value\": \"<string>\",\n        \"\": \"<string>\"\n      }\n    },\n    {\n      \"character\": {\n        \"type\": \"avatar\",\n        \"avatar_id\": \"<string>\",\n        \"talking_photo_id\": \"<string>\",\n        \"scale\": 1,\n        \"avatar_style\": \"normal\",\n        \"offset\": {\n          \"x\": \"<float>\",\n          \"y\": \"<float>\"\n        },\n        \"matting\": \"<string>\",\n        \"circle_background_color\": \"<string>\",\n        \"talking_photo_style\": \"<string>\",\n        \"talking_style\": \"<string>\",\n        \"expression\": \"<string>\",\n        \"super_resolution\": \"<string>\"\n      },\n      \"voice\": {\n        \"type\": \"<string>\",\n        \"voice_id\": \"<string>\",\n        \"input_text\": \"<string>\",\n        \"speed\": \"<float>\",\n        \"pitch\": \"<integer>\",\n        \"emotion\": \"<string>\",\n        \"locale\": \"<string>\"\n      },\n      \"background\": {\n        \"type\": \"<string>\",\n        \"value\": \"<string>\",\n        \"\": \"<string>\"\n      }\n    }\n  ],\n  \"caption\": false,\n  \"title\": \"<string>\",\n  \"callback_id\": \"<string>\",\n  \"folder_id\": \"<string>\",\n  \"callback_url\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7929f93f-5a6b-4c37-88a6-16b0f3b6d2e7",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "video",
+                    "generate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dimension\": {\n    \"width\": 1280,\n    \"height\": 720\n  },\n  \"video_inputs\": [\n    {\n      \"character\": {\n        \"type\": \"avatar\",\n        \"avatar_id\": \"<string>\",\n        \"talking_photo_id\": \"<string>\",\n        \"scale\": 1,\n        \"avatar_style\": \"normal\",\n        \"offset\": {\n          \"x\": \"<float>\",\n          \"y\": \"<float>\"\n        },\n        \"matting\": \"<string>\",\n        \"circle_background_color\": \"<string>\",\n        \"talking_photo_style\": \"<string>\",\n        \"talking_style\": \"<string>\",\n        \"expression\": \"<string>\",\n        \"super_resolution\": \"<string>\"\n      },\n      \"voice\": {\n        \"type\": \"<string>\",\n        \"voice_id\": \"<string>\",\n        \"input_text\": \"<string>\",\n        \"speed\": \"<float>\",\n        \"pitch\": \"<integer>\",\n        \"emotion\": \"<string>\",\n        \"locale\": \"<string>\"\n      },\n      \"background\": {\n        \"type\": \"<string>\",\n        \"value\": \"<string>\",\n        \"\": \"<string>\"\n      }\n    },\n    {\n      \"character\": {\n        \"type\": \"avatar\",\n        \"avatar_id\": \"<string>\",\n        \"talking_photo_id\": \"<string>\",\n        \"scale\": 1,\n        \"avatar_style\": \"normal\",\n        \"offset\": {\n          \"x\": \"<float>\",\n          \"y\": \"<float>\"\n        },\n        \"matting\": \"<string>\",\n        \"circle_background_color\": \"<string>\",\n        \"talking_photo_style\": \"<string>\",\n        \"talking_style\": \"<string>\",\n        \"expression\": \"<string>\",\n        \"super_resolution\": \"<string>\"\n      },\n      \"voice\": {\n        \"type\": \"<string>\",\n        \"voice_id\": \"<string>\",\n        \"input_text\": \"<string>\",\n        \"speed\": \"<float>\",\n        \"pitch\": \"<integer>\",\n        \"emotion\": \"<string>\",\n        \"locale\": \"<string>\"\n      },\n      \"background\": {\n        \"type\": \"<string>\",\n        \"value\": \"<string>\",\n        \"\": \"<string>\"\n      }\n    }\n  ],\n  \"caption\": false,\n  \"title\": \"<string>\",\n  \"callback_id\": \"<string>\",\n  \"folder_id\": \"<string>\",\n  \"callback_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "50339612-19c2-42ea-97b6-14c8f1ca3c31",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "video",
+                    "generate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dimension\": {\n    \"width\": 1280,\n    \"height\": 720\n  },\n  \"video_inputs\": [\n    {\n      \"character\": {\n        \"type\": \"avatar\",\n        \"avatar_id\": \"<string>\",\n        \"talking_photo_id\": \"<string>\",\n        \"scale\": 1,\n        \"avatar_style\": \"normal\",\n        \"offset\": {\n          \"x\": \"<float>\",\n          \"y\": \"<float>\"\n        },\n        \"matting\": \"<string>\",\n        \"circle_background_color\": \"<string>\",\n        \"talking_photo_style\": \"<string>\",\n        \"talking_style\": \"<string>\",\n        \"expression\": \"<string>\",\n        \"super_resolution\": \"<string>\"\n      },\n      \"voice\": {\n        \"type\": \"<string>\",\n        \"voice_id\": \"<string>\",\n        \"input_text\": \"<string>\",\n        \"speed\": \"<float>\",\n        \"pitch\": \"<integer>\",\n        \"emotion\": \"<string>\",\n        \"locale\": \"<string>\"\n      },\n      \"background\": {\n        \"type\": \"<string>\",\n        \"value\": \"<string>\",\n        \"\": \"<string>\"\n      }\n    },\n    {\n      \"character\": {\n        \"type\": \"avatar\",\n        \"avatar_id\": \"<string>\",\n        \"talking_photo_id\": \"<string>\",\n        \"scale\": 1,\n        \"avatar_style\": \"normal\",\n        \"offset\": {\n          \"x\": \"<float>\",\n          \"y\": \"<float>\"\n        },\n        \"matting\": \"<string>\",\n        \"circle_background_color\": \"<string>\",\n        \"talking_photo_style\": \"<string>\",\n        \"talking_style\": \"<string>\",\n        \"expression\": \"<string>\",\n        \"super_resolution\": \"<string>\"\n      },\n      \"voice\": {\n        \"type\": \"<string>\",\n        \"voice_id\": \"<string>\",\n        \"input_text\": \"<string>\",\n        \"speed\": \"<float>\",\n        \"pitch\": \"<integer>\",\n        \"emotion\": \"<string>\",\n        \"locale\": \"<string>\"\n      },\n      \"background\": {\n        \"type\": \"<string>\",\n        \"value\": \"<string>\",\n        \"\": \"<string>\"\n      }\n    }\n  ],\n  \"caption\": false,\n  \"title\": \"<string>\",\n  \"callback_id\": \"<string>\",\n  \"folder_id\": \"<string>\",\n  \"callback_url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6fcf24f0-3c01-46f3-9203-af11e6b12227",
+          "name": "Retrieve Video List",
+          "request": {
+            "name": "Retrieve Video List",
+            "description": {
+              "content": "This endpoint retrieves a list of videos associated with the user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "video.list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "",
+                  "description": "Enter a range from 0-100 for the number of videos you wish to retrieve in one response. If more than 100 videos exist, you can retrieve the remaining videos using the pagination token returned in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "folder_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "title",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "pagination token for next page"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0f6cdc6d-3d93-4f3d-84fa-0edf4c1dc289",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video.list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": ""
+                    },
+                    {
+                      "key": "folder_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "261512c0-af09-4fcf-95e0-023e7cfa8808",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video.list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": ""
+                    },
+                    {
+                      "key": "folder_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "637ade17-5d1c-46ed-9614-1316bf8270d0",
+          "name": "Create a WebM Video",
+          "request": {
+            "name": "Create a WebM Video",
+            "description": {
+              "content": "Generates a webm video with transparent background and an avatar speaking the input text. You can customize the avatar's pose, style, and voice, as well as the dimensions of the video.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "video.webm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "You api key",
+                "key": "x-api-key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"avatar_pose_id\": \"Vanessa-invest-20220722\",\n  \"avatar_style\": \"normal\",\n  \"input_text\": \"This is a WebM video generated by HeyGen API\",\n  \"voice_id\": \"1bd001e7e50f421d891986aad5158bc8\",\n  \"input_audio\": \"<string>\",\n  \"dimension\": {\n    \"width\": 1280,\n    \"height\": 720\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b840b9c4-d3d7-47e9-9732-a74083274b9a",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video.webm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "You api key",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"avatar_pose_id\": \"Vanessa-invest-20220722\",\n  \"avatar_style\": \"normal\",\n  \"input_text\": \"This is a WebM video generated by HeyGen API\",\n  \"voice_id\": \"1bd001e7e50f421d891986aad5158bc8\",\n  \"input_audio\": \"<string>\",\n  \"dimension\": {\n    \"width\": 1280,\n    \"height\": 720\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\\"code\\\": 100, \\\"data\\\": {\\\"video_id\\\": \\\"xxx\\\"}, \\\"msg\\\": null, \\\"message\\\": null}%\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7c1f64c-9532-4404-8099-baedcf13f973",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "video.webm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "You api key",
+                    "key": "x-api-key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"avatar_pose_id\": \"Vanessa-invest-20220722\",\n  \"avatar_style\": \"normal\",\n  \"input_text\": \"This is a WebM video generated by HeyGen API\",\n  \"voice_id\": \"1bd001e7e50f421d891986aad5158bc8\",\n  \"input_audio\": \"<string>\",\n  \"dimension\": {\n    \"width\": 1280,\n    \"height\": 720\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.heygen.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "33086129-337a-42ea-becb-89d3f24982d9",
+    "name": "HeyGen Account Videos API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI specification for the HeyGen API endpoints referenced across the documentation.",
+      "type": "text/plain"
+    }
+  }
+}

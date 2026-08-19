@@ -1,0 +1,120 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HeyGen Account Templates API",
+    "version": "4.0.8"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate Video from Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v2/template/:template_id/generate",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This API now supports New AI Studio!"
+        },
+        {
+          "info": {
+            "name": "Retrieve Template Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v2/template/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This API now supports New AI Studio!"
+        },
+        {
+          "info": {
+            "name": "List Templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v2/templates",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This API now supports New AI Studio!"
+        },
+        {
+          "info": {
+            "name": "Retrieve Template Details (V3)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v3/template/:template_id",
+            "params": [
+              {
+                "name": "template_id",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the template."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieves template details by ID, including variables available for replacement and scene mappings for the New AI Studio."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

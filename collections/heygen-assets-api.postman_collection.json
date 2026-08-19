@@ -1,0 +1,168 @@
+{
+  "item": [
+    {
+      "id": "b981ab01-446a-428d-9a55-e13dfab98cfb",
+      "name": "Assets",
+      "description": {
+        "content": "Asset upload endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bba67676-360c-403b-b9e2-143b64f2be2c",
+          "name": "Upload Asset",
+          "request": {
+            "name": "Upload Asset",
+            "description": {
+              "content": "Uploads a media file (image, video, or audio) to the authenticated user's HeyGen account and returns the asset ID for future use.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "asset"
+              ],
+              "host": [
+                "upload",
+                "heygen",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/octet-stream"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<binary>"
+            }
+          },
+          "response": [
+            {
+              "id": "c42e2cc4-4e4f-4bde-9b6b-dda339b358dc",
+              "name": "Asset uploaded successfully.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "asset"
+                  ],
+                  "host": [
+                    "upload",
+                    "heygen",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) MIME type of the file to upload.",
+                    "key": "Content-Type",
+                    "value": "audio/mpeg"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<binary>"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 100,\n  \"data\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"file_type\": \"string\",\n    \"folder_id\": \"string\",\n    \"meta\": \"string\",\n    \"created_ts\": 4024,\n    \"url\": \"string\",\n    \"image_key\": \"string\"\n  },\n  \"msg\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.heygen.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "50d96f7f-1cd8-493d-b2e6-6fdb4fd1b6a7",
+    "name": "HeyGen Account Assets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI specification for the HeyGen API endpoints referenced across the documentation.",
+      "type": "text/plain"
+    }
+  }
+}

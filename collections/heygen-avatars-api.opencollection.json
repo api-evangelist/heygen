@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HeyGen Account Avatars API",
+    "version": "4.0.8"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Avatars",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Avatars (V2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v2/avatars",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "You can get your Avatars and Talking Photos(Photo Avatars) with this endpoint."
+        },
+        {
+          "info": {
+            "name": "List All Avatar Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v2/avatar_group.list",
+            "params": [
+              {
+                "name": "include_public",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include all public avatar groups"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List all avatar groups"
+        },
+        {
+          "info": {
+            "name": "List All Avatars in one avatar group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v2/avatar_group/:group_id/avatars",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path",
+                "description": "Avatar group id"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List all avatars in one avatar group"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HeyGen Account Webhooks API",
+    "version": "4.0.8"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Webhook Endpoints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v1/webhook/endpoint.list",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "list all your registered webhook endpoints"
+        },
+        {
+          "info": {
+            "name": "Add a Webhook Endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v1/webhook/endpoint.add",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Add a Webhook Endpoint"
+        },
+        {
+          "info": {
+            "name": "Update a Webhook Endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.heygen.com/v1/webhook/endpoint.update",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "update an existing webhook endpoint"
+        },
+        {
+          "info": {
+            "name": "Delete a Webhook Endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.heygen.com/v1/webhook/endpoint.delete",
+            "params": [
+              {
+                "name": "endpoint_id",
+                "value": "",
+                "type": "query",
+                "description": "the endpoint's id you want to delete"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "delete an existing webhook endpoint"
+        },
+        {
+          "info": {
+            "name": "List Available Webhook Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v1/webhook/webhook.list",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "list all supported webhook events"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

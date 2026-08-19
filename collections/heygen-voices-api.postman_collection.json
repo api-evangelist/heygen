@@ -1,0 +1,573 @@
+{
+  "item": [
+    {
+      "id": "c12a5df4-a6e9-42ac-9121-b372571a7d2f",
+      "name": "Voices",
+      "description": {
+        "content": "Voice listing and voice-management endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ba963731-3fae-4171-af45-d9f2500d67fa",
+          "name": "List All Voices (V2)",
+          "request": {
+            "name": "List All Voices (V2)",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "voices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a22b129f-53d7-4e02-aeef-7f7f7780c97c",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": null,\\n  \\\"data\\\": {\\n    \\\"voices\\\": [\\n      {\\n        \\\"voice_id\\\": \\\"0f059f9e54284391b48300f916cc6a01\\\",\\n        \\\"language\\\": \\\"French\\\",\\n        \\\"gender\\\": \\\"Female\\\",\\n        \\\"name\\\": \\\"Celeste - Professional\\\",\\n        \\\"preview_audio\\\": \\\"https://static.movio.la/voice_preview/ebde256ffc2d4e14a0542bf4bd8719fa.wav\\\",\\n        \\\"support_pause\\\": true\\n      },\\n      {\\n        \\\"voice_id\\\": \\\"1fe966a9dfa14b16ab4d146fabe868b5\\\",\\n        \\\"language\\\": \\\"English\\\",\\n        \\\"gender\\\": \\\"Female\\\",\\n        \\\"name\\\": \\\"Ana - Cheerful\\\",\\n        \\\"preview_audio\\\": \\\"https://static.movio.la/voice_preview/T4MYTkhp7F5SA9HRXHzL9A.wav\\\",\\n        \\\"support_pause\\\": true\\n      },\\n      {\\n        \\\"voice_id\\\": \\\"001cc6d54eae4ca2b5fb16ca8e8eb9bb\\\",\\n        \\\"language\\\": \\\"Spanish\\\",\\n        \\\"gender\\\": \\\"Male\\\",\\n        \\\"name\\\": \\\"Elias - Natural\\\",\\n        \\\"preview_audio\\\": \\\"https://static.movio.la/voice_preview/JmCb3rgMZnCjCAA9aacnGj.wav\\\",\\n        \\\"support_pause\\\": false\\n      },\\n    ]\\n  },\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d10cc49-f7d3-47d9-89da-14db29981a10",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98a915fb-5497-4e8d-8f03-518f30324daf",
+          "name": "List Brand Voices",
+          "request": {
+            "name": "List Brand Voices",
+            "description": {
+              "content": "This endpoint is used to retrieve a list of brand voices your created",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "brand_voice",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "Limit of brand voices to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "token",
+                  "value": "<string>",
+                  "description": "Pagination token"
+                },
+                {
+                  "disabled": false,
+                  "key": "name_only",
+                  "value": "<boolean>",
+                  "description": "Return the name of the brand voices"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bfe1b178-57c0-44c2-bfe6-4fa222e86659",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "brand_voice",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name_only",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1b6f8eb4-6fa0-42b4-90eb-690ced6ff9bc",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "brand_voice",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name_only",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0877eef8-b527-449a-8b1c-db3e6ad6dedb",
+          "name": "Update Brand Voice",
+          "request": {
+            "name": "Update Brand Voice",
+            "description": {
+              "content": "Updates an existing brand voice with specified changes. Only the fields that need to be modified should be included in the request body.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "brand_voice",
+                ":brand_voice_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "brand_voice_id",
+                  "description": "(Required) The unique identifier of the brand voice to update"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-KEY"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"blacklist\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"whitelist\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tones\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vocabulary\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tone\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9362805f-dc4e-4cf2-b1f7-8eef9c7577a7",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "brand_voice",
+                    ":brand_voice_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "brand_voice_id",
+                      "description": "(Required) The unique identifier of the brand voice to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"blacklist\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"whitelist\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tones\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vocabulary\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tone\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9ab5a921-7e98-4193-8179-0075f4685dcf",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "brand_voice",
+                    ":brand_voice_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "brand_voice_id",
+                      "description": "(Required) The unique identifier of the brand voice to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"blacklist\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"whitelist\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tones\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"vocabulary\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tone\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.heygen.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b8440ba6-46be-47ca-8b7f-1ebda211bd74",
+    "name": "HeyGen Account Voices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI specification for the HeyGen API endpoints referenced across the documentation.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HeyGen Account Photo Avatars API",
+    "version": "4.0.8"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Photo Avatars",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate photo avatar photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v2/photo_avatar/photo/generate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This endpoint will generate photos that can be used to create photo avatars, returns a generation id, which can be used in the check generation status endpoint to get status and final image/image keys"
+        },
+        {
+          "info": {
+            "name": "Generate photo avatar looks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v2/photo_avatar/look/generate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This endpoint can be used to generate additional looks for a trained photo avatar group. The photo avatar group must be trained to use this endpoint."
+        },
+        {
+          "info": {
+            "name": "Check photo/look generation status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v2/photo_avatar/generation/:generation_id",
+            "params": [
+              {
+                "name": "generation_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Check photo/look generation status"
+        },
+        {
+          "info": {
+            "name": "Create photo avatar group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v2/photo_avatar/avatar_group/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This api can be used to create a photo avatar group\nFor generated photo avatar, pass the generation_id and the image_key\nFor user uploaded avatar, first upload the photo using the upload assets api. Then use the key as image_key\nThis api only allows using one photo to establish the identity, you can add more photos using the add looks api"
+        },
+        {
+          "info": {
+            "name": "Add looks to photo avatar group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v2/photo_avatar/avatar_group/add",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Add other looks to existing photo avatar group"
+        },
+        {
+          "info": {
+            "name": "Train photo avatar group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v2/photo_avatar/train",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Train a photo avatar group."
+        },
+        {
+          "info": {
+            "name": "Get training job status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v2/photo_avatar/train/status/:group_id",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path",
+                "description": "Avatar group id"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get the training status of a avatar group"
+        },
+        {
+          "info": {
+            "name": "Add motion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v2/photo_avatar/add_motion",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Add motion to an existing photo avatar, returns the id of the new avatar that has motion"
+        },
+        {
+          "info": {
+            "name": "Add sound effect",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v2/photo_avatar/add_sound_effect",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This api adds sound effect into a photo avatar"
+        },
+        {
+          "info": {
+            "name": "Photo avatar details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v2/photo_avatar/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get the details of a photo avatar"
+        },
+        {
+          "info": {
+            "name": "Upscale an avatar",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v2/photo_avatar/upscale",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Call this api to upscale an avatar, can only be called on an avatar that has motion, returns the photo avatar id that is upscaled"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HeyGen Account Videos API",
+    "version": "4.0.8"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Videos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Video Status/Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v1/video_status.get",
+            "params": [
+              {
+                "name": "video_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This endpoint allows you to retrieve the status and details of a specific video."
+        },
+        {
+          "info": {
+            "name": "Delete a Video",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.heygen.com/v1/video.delete",
+            "params": [
+              {
+                "name": "video_id",
+                "value": "",
+                "type": "query",
+                "description": "id of the video you want to delete"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete a Video"
+        },
+        {
+          "info": {
+            "name": "Create Avatar Video (V2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v2/video/generate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This API now generates videos with our New AI Studio backend."
+        },
+        {
+          "info": {
+            "name": "Retrieve Video List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v1/video.list",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Enter a range from 0-100 for the number of videos you wish to retrieve in one response. If more than 100 videos exist, you can retrieve the remaining videos using the pagination token returned in the response."
+              },
+              {
+                "name": "folder_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "title",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query",
+                "description": "pagination token for next page"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This endpoint retrieves a list of videos associated with the user."
+        },
+        {
+          "info": {
+            "name": "Create a WebM Video",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v1/video.webm",
+            "headers": [
+              {
+                "name": "x-api-key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Generates a webm video with transparent background and an avatar speaking the input text. You can customize the avatar's pose, style, and voice, as well as the dimensions of the video."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

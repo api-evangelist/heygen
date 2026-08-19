@@ -1,0 +1,109 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HeyGen Account Voices API",
+    "version": "4.0.8"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Voices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Voices (V2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v2/voices",
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List All Voices (V2)"
+        },
+        {
+          "info": {
+            "name": "List Brand Voices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v1/brand_voice/list",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit of brand voices to return"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              },
+              {
+                "name": "name_only",
+                "value": "",
+                "type": "query",
+                "description": "Return the name of the brand voices"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This endpoint is used to retrieve a list of brand voices your created"
+        },
+        {
+          "info": {
+            "name": "Update Brand Voice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v1/brand_voice/:brand_voice_id",
+            "params": [
+              {
+                "name": "brand_voice_id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the brand voice to update"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Updates an existing brand voice with specified changes. Only the fields that need to be modified should be included in the request body."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

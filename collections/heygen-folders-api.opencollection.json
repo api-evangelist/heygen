@@ -1,0 +1,172 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HeyGen Account Folders API",
+    "version": "4.0.8"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Folders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v1/folders/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create Folder"
+        },
+        {
+          "info": {
+            "name": "List Folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.heygen.com/v1/folders",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of folders to return"
+              },
+              {
+                "name": "parent_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by parent folder ID"
+              },
+              {
+                "name": "name_filter",
+                "value": "",
+                "type": "query",
+                "description": "Search folders by name"
+              },
+              {
+                "name": "is_trash",
+                "value": "",
+                "type": "query",
+                "description": "Filter trashed folders"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "query",
+                "description": "A pagination token used for fetching the next set of folders"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Retrieves a list of folders with optional filters."
+        },
+        {
+          "info": {
+            "name": "Update Folder (Rename Only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v1/folders/:folder_id",
+            "params": [
+              {
+                "name": "folder_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Updates the name of an existing folder."
+        },
+        {
+          "info": {
+            "name": "Trash Folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v1/folders/:folder_id/trash",
+            "params": [
+              {
+                "name": "folder_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Moves a folder to the trash."
+        },
+        {
+          "info": {
+            "name": "Restore Folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.heygen.com/v1/folders/:folder_id/restore",
+            "params": [
+              {
+                "name": "folder_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-KEY",
+              "value": "{{X-API-KEY}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Restore Folder"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
