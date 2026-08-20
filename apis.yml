@@ -33,6 +33,17 @@ tags:
   - Video
   - Avatars
   - Voice Cloning
+  - Text-to-Speech
+  - Lip Sync
+  - Translation
+  - Streaming
+  - MCP
+tags_raw:
+  - Artificial Intelligence
+  - Generative AI
+  - Video
+  - Avatars
+  - Voice Cloning
   - Text To Speech
   - Lipsync
   - Translation
@@ -53,6 +64,13 @@ apis:
   humanURL: https://developers.heygen.com/
   baseURL: https://api.heygen.com/v3
   tags:
+  - Video
+  - Avatars
+  - Voices
+  - Lip Sync
+  - Translation
+  - Text-to-Speech
+  tags_raw:
   - Video
   - Avatars
   - Voices
@@ -234,6 +252,8 @@ apis:
   humanURL: https://developers.heygen.com/
   baseURL: https://api.heygen.com/v3
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
