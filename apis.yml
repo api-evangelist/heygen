@@ -46,7 +46,7 @@ tags:
   - Avatars
   - Voice Cloning
   - Text-to-Speech
-  - Lip Sync
+  - Lipsync
   - Translation
   - Streaming
   - MCP
@@ -79,7 +79,7 @@ apis:
   - Video
   - Avatars
   - Voices
-  - Lip Sync
+  - Lipsync
   - Translation
   - Text-to-Speech
   tags_raw:
