@@ -79,7 +79,7 @@ apis:
   tags:
   - Video
   - Avatars
-  - Voices
+  - Voice
   - Lip Sync
   - Translation
   - Text-to-Speech
@@ -185,6 +185,8 @@ apis:
   humanURL: https://developers.heygen.com/
   baseURL: https://api.heygen.com/v3
   tags:
+  - Digital Twin
+  tags_raw:
   - Digital Twins
   properties:
   - type: OpenAPI
@@ -245,6 +247,8 @@ apis:
   humanURL: https://developers.heygen.com/
   baseURL: https://api.heygen.com/v3
   tags:
+  - Video
+  tags_raw:
   - Videos
   properties:
   - type: OpenAPI
@@ -255,6 +259,8 @@ apis:
   humanURL: https://developers.heygen.com/
   baseURL: https://api.heygen.com/v3
   tags:
+  - Voice
+  tags_raw:
   - Voices
   properties:
   - type: OpenAPI
