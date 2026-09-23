@@ -1,18 +1,7 @@
 {
   "provider": "heygen",
   "sources": [
-    "heygen-account-api-openapi.yml",
-    "heygen-assets-api-openapi.yml",
-    "heygen-avatars-api-openapi.yml",
-    "heygen-digital-twins-api-openapi.yml",
-    "heygen-folders-api-openapi.yml",
-    "heygen-photo-avatars-api-openapi.yml",
-    "heygen-streaming-api-openapi.yml",
-    "heygen-templates-api-openapi.yml",
-    "heygen-video-translation-api-openapi.yml",
-    "heygen-videos-api-openapi.yml",
-    "heygen-voices-api-openapi.yml",
-    "heygen-webhooks-api-openapi.yml"
+    "_original/heygen-openapi.yml"
   ],
   "outputs": [
     "heygen-account-api-openapi.yml",
@@ -31,6 +20,23 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "heygen-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "heygen-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-assets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-avatars-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-digital-twins-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-folders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-photo-avatars-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-streaming-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-video-translation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-videos-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-voices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "heygen-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: HeyGen Account Photo Avatars API
+  title: HeyGen Photo Avatars API
   version: 4.0.8
   description: OpenAPI specification for the HeyGen API endpoints referenced across the documentation.
 servers:
@@ -180,7 +180,6 @@ paths:
   /v2/photo_avatar/generation/{generation_id}:
     get:
       summary: Check photo/look generation status
-      description: Check photo/look generation status
       operationId: check-photolook-generation-status
       parameters:
       - name: generation_id

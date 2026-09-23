@@ -1,0 +1,1 @@
+{"resource":"https://mcp.heygen.com/mcp/v1","authorization_servers":["https://api2.heygen.com"],"scopes_supported":["openid","profile","email"],"bearer_methods_supported":["header"]}
