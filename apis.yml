@@ -278,6 +278,9 @@ apis:
   - type: OpenAPI
     url: openapi/heygen-webhooks-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/heygen-capability-edges.yml
+    name: HeyGen Business Capability Map
   - type: AgenticAccess
     url: agentic-access/heygen-agentic-access.yml
   - type: TrustCenter
