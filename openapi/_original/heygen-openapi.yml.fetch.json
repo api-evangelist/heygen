@@ -1,0 +1,12 @@
+{
+ "url": "https://developers.heygen.com/openapi.yaml",
+ "requested_url": "https://developers.heygen.com/openapi.yaml",
+ "status": 200,
+ "content_type": "text/yaml",
+ "bytes": 88080,
+ "sha256": "45eb48b80814a5b5380b5bfa3ecb42124f2a62cc2ab03aae08c8a4ed691d57a0",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
