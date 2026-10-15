@@ -16,3 +16,81 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: heygen-zapier
+  label: Zapier
+  partner: zapier
+  partner_name: Zapier
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  evidence: https://zapier.com/apps/heygen/integrations
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: HeyGen
+    matched_domain: heygen.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: heygen
+    beta: false
+    builder: unknown (not in the directory record)
+  status: pending-generation
+  arazzo: null
+- slug: heygen-n8n
+  label: n8n
+  partner: n8n
+  partner_name: n8n
+  type: marketplace
+  marketplace: n8n-community
+  channel: open-source-node
+  evidence: https://www.npmjs.com/package/@heygenofficial/n8n-nodes-heygen-official
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: n8n community nodes (npm keyword n8n-community-node-package)
+    spec_file: null
+    role: ipaas-connector:n8n-community
+    registered_name: '@heygenofficial/n8n-nodes-heygen-official'
+    matched_domain: heygen.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    package: '@heygenofficial/n8n-nodes-heygen-official'
+    version: 0.1.9
+    published: '2026-07-23T17:59:30.757Z'
+    matched_on: publisher-email
+    builder: provider (package published from the provider's own domain)
+  status: pending-generation
+  arazzo: null
+- slug: heygen-pipedream
+  label: Pipedream
+  partner: pipedream
+  partner_name: Pipedream
+  type: marketplace
+  marketplace: pipedream-components
+  channel: open-source-node
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/heygen
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Pipedream components (PipedreamHQ/pipedream components/)
+    spec_file: null
+    role: ipaas-connector:pipedream
+    registered_name: heygen
+    matched_domain: heygen.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: heygen
+    actions: true
+    sources: true
+    builder: Pipedream repo (component)
+  status: pending-generation
+  arazzo: null
