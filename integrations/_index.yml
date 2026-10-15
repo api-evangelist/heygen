@@ -39,7 +39,7 @@
     app_slug: heygen
     beta: false
     builder: unknown (not in the directory record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: heygen-n8n
   label: n8n
@@ -66,7 +66,7 @@
     published: '2026-07-23T17:59:30.757Z'
     matched_on: publisher-email
     builder: provider (package published from the provider's own domain)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: heygen-pipedream
   label: Pipedream
@@ -92,5 +92,5 @@
     actions: true
     sources: true
     builder: Pipedream repo (component)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
