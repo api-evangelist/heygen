@@ -1,4 +1,4 @@
-# HeyGen (heygen)
+# HeyGen
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,75 +66,152 @@
 
 HeyGen is an AI video generation platform that creates studio-quality avatar videos, voice clones, and translated video content from simple text prompts. The product line includes Avatar V (digital twins), Photo Avatar, Avatar IV, the Starfish text-to-speech engine, the Video Agent API, Video Translation, and Lipsync. HeyGen serves sales, marketing, e-learning, and localization teams with both self-serve pay-as-you-go API access (starting at a $5 minimum) and enterprise contracts. The company is SOC 2 Type II and GDPR compliant and has powered 50M+ generated videos.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/heygen/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/heygen/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · Generative AI · Video · Avatars · Voice Cloning · Text-to-Speech · Lip Sync · Translation · Streaming · MCP
 
-## Scope
+## HeyGen on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** 3rd-Party
+Everything profiled for HeyGen is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/heygen/](https://apis.io/providers/heygen/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (13)
 
-- Artificial Intelligence
-- Generative AI
-- Video
-- Avatars
-- Voice Cloning
-- Text To Speech
-- Lipsync
-- Translation
-- Streaming
-- MCP
+- [HeyGen API](https://apis.io/apis/heygen/heygen-api/) — The HeyGen REST API exposes video generation, avatar management, text-to-speech (Starfish), video translation, and lipsync capabilities. It supports avatar…
+- [HeyGen Account API](https://apis.io/apis/heygen/heygen-account-api/) — Quota and account information endpoints.
+- [HeyGen Assets API](https://apis.io/apis/heygen/heygen-assets-api/) — Asset upload endpoints.
+- [HeyGen Avatars API](https://apis.io/apis/heygen/heygen-avatars-api/) — Avatar and avatar group discovery endpoints.
+- [HeyGen Digital Twins API](https://apis.io/apis/heygen/heygen-digital-twins-api/) — Digital Twin creation, status, and deletion endpoints.
+- [HeyGen Folders API](https://apis.io/apis/heygen/heygen-folders-api/) — Folder management endpoints.
+- [HeyGen Photo Avatars API](https://apis.io/apis/heygen/heygen-photo-avatars-api/) — Photo avatar generation, training, and enhancement endpoints.
+- [HeyGen Streaming API](https://apis.io/apis/heygen/heygen-streaming-api/) — Streaming avatar session lifecycle and task endpoints.
+- [HeyGen Templates API](https://apis.io/apis/heygen/heygen-templates-api/) — Template listing, retrieval, and template-based video generation.
+- [HeyGen Video Translation API](https://apis.io/apis/heygen/heygen-video-translation-api/) — Video translation and supported-language endpoints.
+- [HeyGen Videos API](https://apis.io/apis/heygen/heygen-videos-api/) — Video generation, retrieval, and management endpoints.
+- [HeyGen Voices API](https://apis.io/apis/heygen/heygen-voices-api/) — Voice listing and voice-management endpoints.
+- [HeyGen Webhooks API](https://apis.io/apis/heygen/heygen-webhooks-api/) — Webhook event and endpoint management.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### HeyGen API
+Model Context Protocol servers that expose the API to agents.
 
-The HeyGen REST API exposes video generation, avatar management, text-to-speech (Starfish), video translation, and lipsync capabilities. It supports avatar videos generated from a single text prompt via the Video Agent API, as well as fine-grained programmatic control over avatars, voices, backgrounds, and layouts.
+- [heygen](https://apis.io/servers/heygen/heygen/)
 
-- **Human URL:** [https://developers.heygen.com/](https://developers.heygen.com/)
-- **Base URL:** `https://api.heygen.com/v3`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Video
-- Avatars
-- Voices
-- Lipsync
-- Translation
-- Text To Speech
+- [Heygen Agentic Access](https://apis.io/agentic-access/heygen/heygen-agentic-access/)
 
-#### Properties
+#### Collections (13)
 
-- [Documentation](https://developers.heygen.com/)
-- [Getting Started](https://developers.heygen.com/docs/quick-start)
-- [Sign Up](https://app.heygen.com/signup)
-- [A P I](https://developers.heygen.com/reference)
-- [Pricing](https://www.heygen.com/pricing)
-- [Authentication](https://developers.heygen.com/docs/authentication)
-- [Postman Collection](collections/heygen.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/heygen.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [HeyGen API](https://apis.io/collections/heygen/open-heygen/)
+- [HeyGen Account API](https://apis.io/collections/heygen/open-heygen-account-api/)
+- [HeyGen Account Assets API](https://apis.io/collections/heygen/open-heygen-assets-api/)
+- [HeyGen Account Avatars API](https://apis.io/collections/heygen/open-heygen-avatars-api/)
+- [HeyGen Account Digital Twins API](https://apis.io/collections/heygen/open-heygen-digital-twins-api/)
+- [HeyGen Account Folders API](https://apis.io/collections/heygen/open-heygen-folders-api/)
+- [HeyGen Account Photo Avatars API](https://apis.io/collections/heygen/open-heygen-photo-avatars-api/)
+- [HeyGen Account Streaming API](https://apis.io/collections/heygen/open-heygen-streaming-api/)
+- [HeyGen Account Templates API](https://apis.io/collections/heygen/open-heygen-templates-api/)
+- [HeyGen Account Video Translation API](https://apis.io/collections/heygen/open-heygen-video-translation-api/)
+- [HeyGen Account Videos API](https://apis.io/collections/heygen/open-heygen-videos-api/)
+- [HeyGen Account Voices API](https://apis.io/collections/heygen/open-heygen-voices-api/)
+- [HeyGen Account Webhooks API](https://apis.io/collections/heygen/open-heygen-webhooks-api/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Heygen Authentication](https://apis.io/security/heygen/heygen-authentication/)
+- [Heygen Domain Security](https://apis.io/security/heygen/heygen-domain-security/)
+- [Heygen Trust Center](https://apis.io/security/heygen/heygen-trust-center/)
+- [Heygen Vulnerability Disclosure](https://apis.io/security/heygen/heygen-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Heygen Plans Pricing](https://apis.io/plans/heygen/heygen-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Heygen Rate Limits](https://apis.io/rate-limits/heygen/heygen-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Heygen Finops](https://apis.io/finops/heygen/heygen-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.heygen.com)
 - [Documentation](https://developers.heygen.com)
-- [Blog](https://www.heygen.com/blog)
 - [Pricing](https://www.heygen.com/pricing)
-- [Terms of Service](https://www.heygen.com/policy)
-- [Privacy Policy](https://www.heygen.com/privacy-policy)
-- [X (Twitter)](https://x.com/HeyGen_Official)
-- [LinkedIn](https://www.linkedin.com/company/heygen)
 - [Changelog](https://developers.heygen.com/changelog)
-- [L L Ms Txt](https://developers.heygen.com/llms.txt)
+- [Blog](https://www.heygen.com/blog)
+- [Terms of service](https://www.heygen.com/policy)
+- [Privacy policy](https://www.heygen.com/privacy-policy)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 41.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 49.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 31.6 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 57.9 |
+
+**Agent readiness 48.8** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 27.2** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/heygen/](https://apis.io/providers/heygen/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for HeyGen: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/heygen/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
